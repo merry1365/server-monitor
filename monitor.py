@@ -1,13 +1,17 @@
 from datetime import datetime
+import os
 
+from dotenv import load_dotenv
 import psutil
 
 
-OUTPUT_FILE = "/var/www/portfolio/index.html"
+load_dotenv("/opt/monitor/.env")
 
-CPU_LIMIT = 80
-MEMORY_LIMIT = 90
-DISK_LIMIT = 85
+OUTPUT_FILE = os.getenv("OUTPUT_FILE", "/var/www/portfolio/index.html")
+
+CPU_LIMIT = int(os.getenv("CPU_LIMIT", "80"))
+MEMORY_LIMIT = int(os.getenv("MEMORY_LIMIT", "90"))
+DISK_LIMIT = int(os.getenv("DISK_LIMIT", "85"))
 
 
 while True:
