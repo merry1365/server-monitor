@@ -7,6 +7,15 @@ Sakura VPS上で動作する簡易サーバー監視ツールです。
 PythonでホストサーバーのCPU・メモリ・ディスク使用率を1秒ごとに取得し、Nginxで公開するHTMLファイルに出力します。  
 Pythonスクリプトはsystemdサービスとして常駐起動しています。
 
+## 実行方法
+
+```bash
+sudo systemctl enable server-monitor
+sudo systemctl start server-monitor
+sudo systemctl status server-monitor
+```
+
+systemdサービスとして常駐起動することを前提としています。
 ## 使用技術
 
 - Ubuntu
